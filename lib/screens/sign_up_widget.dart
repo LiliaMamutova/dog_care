@@ -1,8 +1,8 @@
 import 'dart:core';
 
-import 'package:dog_care/auth_widgets/email_field.dart';
-import 'package:dog_care/auth_widgets/password_field.dart';
 import 'package:dog_care/buttons/auth_button.dart';
+import 'package:dog_care/features/auth/components/email_field.dart';
+import 'package:dog_care/features/auth/components/password_field.dart';
 import 'package:dog_care/helpers/flush_bar.dart';
 import 'package:dog_care/screens/main_screen.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +30,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
         children: [
-          EmailField(),
+          EmailField(
+            emailChanged: (value) {
+              print("value from sign up widget email: $value");
+            },
+          ),
           SizedBox(height: 5),
           PasswordField(
             text: "Password",

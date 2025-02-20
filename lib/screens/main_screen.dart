@@ -34,30 +34,13 @@ class _MainScreenState extends State<MainScreen> {
     });
   }
 
-  // void bottomTapped(int pageIndex) {
-  //   setState(
-  //         () {
-  //       bottomSelectedIndex = pageIndex;
-  //       print(pageIndex);
-  //       _pageController.animateToPage(
-  //         pageIndex,
-  //         duration: Duration(milliseconds: 300),
-  //         curve: Cubic(0, 0.5, 0.7, 1),
-  //       );
-  //     },
-  //   );
-  // }
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Second screen")),
       body: PageView(
         controller: _pageController,
-        scrollDirection: Axis.vertical,
-        reverse: true,
+        scrollDirection: Axis.horizontal,
         onPageChanged: (pageIndex) {
           setState(() {
             bottomSelectedIndex = pageIndex;
@@ -69,7 +52,6 @@ class _MainScreenState extends State<MainScreen> {
           SettingsPage(),
         ],
       ),
-
       bottomNavigationBar: NavBar(
         bottomSelectedIndex: bottomSelectedIndex,
         onSelectTab: (index) {
@@ -86,4 +68,3 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 }
-

@@ -1,36 +1,32 @@
-part of 'login_bloc.dart';
+import 'package:equatable/equatable.dart';
 
-enum LoginStatus {
+enum AuthStatus {
   initial,
   loading,
   success,
   error,
 }
 
-class LoginState extends Equatable {
+class AuthState extends Equatable {
   final String email;
   final String password;
   final String message;
-  final LoginStatus loginStatus;
+  final AuthStatus loginStatus;
 
-  bool get isValidEmail => email.length > 6;
-
-  bool get isValidPassword => password.length > 5;
-
-  const LoginState({
+  const AuthState({
     this.email = " ",
     this.password = " ",
     this.message = " ",
-    this.loginStatus = LoginStatus.initial,
+    this.loginStatus = AuthStatus.initial,
   });
 
-  LoginState copyWith({
+  AuthState copyWith({
     String? email,
     String? password,
     String? message,
-    LoginStatus? loginStatus,
+    AuthStatus? loginStatus,
   }) {
-    return LoginState(
+    return AuthState(
       email: email ?? this.email,
       password: password ?? this.password,
       message: message ?? this.message,
