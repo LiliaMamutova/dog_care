@@ -11,15 +11,13 @@ class WelcomeScreen extends StatefulWidget {
   State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen>
-    with TickerProviderStateMixin {
+class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     duration: Duration(seconds: 3),
     vsync: this,
   )..repeat();
 
-  late final Animation<double> _animaton =
-      CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
+  late final Animation<double> _animaton = CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
 
   void dispose() {
     _controller.dispose();
@@ -35,7 +33,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   _navigateToAuthScreen() async {
     await Future.delayed(Duration(seconds: 2), () {});
 
-    Navigator.pushNamed(context, RoutesName.secondScreen);
+    if (mounted) {
+      Navigator.pushNamed(context, RoutesName.authScreen);
+    }
 
     //Navigator.pushReplacementNamed(context, RoutesName.authScreen);
 

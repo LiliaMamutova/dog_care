@@ -1,8 +1,11 @@
-import 'package:dog_care/bloc/login_bloc.dart';
 import 'package:dog_care/screens/sign_up_widget.dart';
 import 'package:dog_care/services/form_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../config/routes/routes_name.dart';
+import '../features/auth/bloc/auth_bloc.dart';
+import '../features/auth/bloc/auth_state.dart';
 
 class AuthScreen extends StatefulWidget {
   // final AuthRepository authRepository;
@@ -14,17 +17,13 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
-  late LoginBloc _loginBloc;
-
-  // AuthServices _authServices = AuthServices();
+  late AuthBloc _loginBloc;
   bool isLogin = true;
 
   @override
   void initState() {
     super.initState();
-    _loginBloc = LoginBloc();
-
-    // _authServices.isLogin(context);
+    _loginBloc = AuthBloc();
   }
 
   void _setAuthProcedure() {
@@ -43,11 +42,10 @@ class _AuthScreenState extends State<AuthScreen> {
     return Scaffold(
       body: BlocProvider(
         create: (_) => _loginBloc,
-        child: BlocListener<LoginBloc, LoginState>(
-          listenWhen: (previous, current) =>
-              previous.loginStatus != current.loginStatus,
+        child: BlocListener<AuthBloc, AuthState>(
           listener: (context, state) {
-            if (state.loginStatus == LoginStatus.error) {
+            print(state.loginStatus);
+            if (state.loginStatus == AuthStatus.error) {
               ScaffoldMessenger.of(context)
                 ..hideCurrentSnackBar()
                 ..showSnackBar(
@@ -57,27 +55,11 @@ class _AuthScreenState extends State<AuthScreen> {
                 );
             }
 
-            // if (state.loginStatus == LoginStatus.loading) {
-            //   ScaffoldMessenger.of(context)
-            //     ..hideCurrentSnackBar()
-            //     ..showSnackBar(
-            //       SnackBar(
-            //         content: Text("Submitting..."),
-            //       ),
-            //     );
-            // }
-
-            if (state.loginStatus == LoginStatus.success) {
-              ScaffoldMessenger.of(context)
-                ..hideCurrentSnackBar()
-                ..showSnackBar(
-                  SnackBar(
-                    content: Text("Login successful"),
-                  ),
-                );
+            if (state.loginStatus == AuthStatus.success) {
+              Navigator.pushNamed(context, RoutesName.mainScreen);
             }
           },
-          child: BlocBuilder<LoginBloc, LoginState>(
+          child: BlocBuilder<AuthBloc, AuthState>(
               buildWhen: (current, previous) => false,
               builder: (context, state) {
                 return Center(
@@ -102,28 +84,13 @@ class _AuthScreenState extends State<AuthScreen> {
                           children: [
                             SizedBox(height: 15),
                             Text(
-                              isLogin
-                                  ? "Please create an account"
-                                  : "Already have an account?",
+                              !isLogin ? "Please create an account" : "Already have an account?",
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 17,
                               ),
                             ),
                             SizedBox(height: 15),
-                            TextButton(
-                              onPressed: () {
-                                context.read<LoginBloc>().add(LoginApi());
-                                _setAuthProcedure();
-                              },
-                              child: Text(
-                                isLogin ? "Sign up" : "Log in",
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 17,
-                                ),
-                              ),
-                            ),
                           ],
                         ),
                       ],

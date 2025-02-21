@@ -1,11 +1,13 @@
-import 'package:dog_care/auth_widgets/email_field.dart';
-import 'package:dog_care/auth_widgets/password_field.dart';
 import 'package:dog_care/buttons/auth_button.dart';
 import 'package:dog_care/buttons/forgot_password_button.dart';
+import 'package:dog_care/features/auth/components/email_field.dart';
+import 'package:dog_care/features/auth/components/password_field.dart';
 import 'package:dog_care/screens/sign_up_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../screens/main_screen.dart';
+import '../features/auth/bloc/auth_bloc.dart';
+import '../features/auth/bloc/auth_event.dart';
 
 class FormWidget extends StatefulWidget {
   const FormWidget({super.key});
@@ -16,6 +18,8 @@ class FormWidget extends StatefulWidget {
 
 class _FormWidgetState extends State<FormWidget> {
   final _formKey = GlobalKey<FormState>();
+  String password = "";
+  String email = "";
   bool isLogin = true;
 
   void _submitForm() {
@@ -25,13 +29,17 @@ class _FormWidgetState extends State<FormWidget> {
 
     final isValid = _formKey.currentState!.validate();
 
-    if (isValid) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => MainScreen(),
-        ),
-      );
+    if (!isValid) {
+      return;
     }
+
+    _formKey.currentState!.save();
+    final loginEvent = LoginEvent(
+      email: email,
+      password: password,
+      message: "Success",
+    );
+    BlocProvider.of<AuthBloc>(context).add(loginEvent);
   }
 
   @override
@@ -43,11 +51,17 @@ class _FormWidgetState extends State<FormWidget> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
         children: [
-          EmailField(),
+          EmailField(
+            emailChanged: (value) {
+              email = value;
+            },
+          ),
           SizedBox(height: 5),
           PasswordField(
             text: "Password",
-            passwordChangedEvent: (value) {},
+            passwordChangedEvent: (value) {
+              password = value;
+            },
           ),
           SizedBox(height: 10),
           ForgotPasswordButton(),
@@ -57,7 +71,7 @@ class _FormWidgetState extends State<FormWidget> {
           AuthButton(
             onPress: _submitForm,
             formKey: _formKey,
-            text: "Log in",
+            text: "Log in!",
           ),
           SizedBox(height: 10),
         ],

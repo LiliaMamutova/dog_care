@@ -11,7 +11,7 @@ class Routes {
         return MaterialPageRoute(builder: (context) => const WelcomeScreen());
       case RoutesName.authScreen:
         return MaterialPageRoute(builder: (context) => const AuthScreen());
-      case RoutesName.secondScreen:
+      case RoutesName.mainScreen:
         return MaterialPageRoute(builder: (context) => const MainScreen());
       default:
         return MaterialPageRoute(builder: (context) {
