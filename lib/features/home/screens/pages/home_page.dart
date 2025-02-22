@@ -10,6 +10,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Icon(Icons.home, size: 100,);
+    return const Icon(
+      Icons.home,
+      size: 100,
+    );
   }
 }
