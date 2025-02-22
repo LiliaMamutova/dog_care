@@ -1,11 +1,12 @@
 import 'dart:core';
 
-import 'package:dog_care/buttons/auth_button.dart';
 import 'package:dog_care/features/auth/components/email_field.dart';
 import 'package:dog_care/features/auth/components/password_field.dart';
-import 'package:dog_care/helpers/flush_bar.dart';
-import 'package:dog_care/screens/main_screen.dart';
+import 'package:dog_care/features/home/screens/main_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../../../shared/components/buttons/auth_button.dart';
+import '../../../shared/helpers/flush_bar.dart';
 
 class SignUpWidget extends StatefulWidget {
   const SignUpWidget({super.key});
@@ -77,7 +78,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 );
               }
             },
-            formKey: _formKey,
             text: "Sign Up",
           ),
         ],

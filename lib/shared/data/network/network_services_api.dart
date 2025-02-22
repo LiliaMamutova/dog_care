@@ -2,18 +2,18 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:dog_care/data/exception/app_exceptions.dart';
-import 'package:dog_care/data/network/base_api_services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+
+import '../exception/app_exceptions.dart';
+import 'base_api_services.dart';
 
 class NetworkServicesApi extends BaseApiServices {
   @override
   Future<dynamic> getApi(String url) async {
     dynamic jsonResponse;
     try {
-      final response =
-          await http.get(Uri.parse(url)).timeout(Duration(seconds: 10));
+      final response = await http.get(Uri.parse(url)).timeout(Duration(seconds: 10));
 
       jsonResponse = returnResponse(response);
 
@@ -30,8 +30,7 @@ class NetworkServicesApi extends BaseApiServices {
   Future<dynamic> deleteApi(String url) async {
     dynamic jsonResponse;
     try {
-      final response =
-          await http.delete(Uri.parse(url)).timeout(Duration(seconds: 10));
+      final response = await http.delete(Uri.parse(url)).timeout(Duration(seconds: 10));
 
       jsonResponse = returnResponse(response);
 
@@ -53,9 +52,7 @@ class NetworkServicesApi extends BaseApiServices {
       print(data);
     }
     try {
-      final response = await http
-          .post(Uri.parse(url), body: data)
-          .timeout(Duration(seconds: 10));
+      final response = await http.post(Uri.parse(url), body: data).timeout(Duration(seconds: 10));
 
       jsonResponse = returnResponse(response);
 
@@ -84,8 +81,7 @@ dynamic returnResponse(http.Response response) {
       throw UnauthorisedException();
 
     case 500:
-      throw FetchDataException(
-          "Error communication with Server" + response.statusCode.toString());
+      throw FetchDataException("Error communication with Server" + response.statusCode.toString());
     default:
       throw UnauthorisedException();
   }

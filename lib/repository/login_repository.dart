@@ -1,6 +1,7 @@
 import 'package:dog_care/config/app_url.dart';
-import 'package:dog_care/data/network/network_services_api.dart';
-import 'package:dog_care/models/user_model.dart';
+
+import '../shared/data/network/network_services_api.dart';
+import '../shared/models/user_model.dart';
 
 class LoginRepository {
   final _api = NetworkServicesApi();

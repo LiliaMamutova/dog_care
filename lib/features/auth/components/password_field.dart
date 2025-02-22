@@ -1,5 +1,6 @@
-import 'package:dog_care/helpers/validations.dart';
 import 'package:flutter/material.dart';
+
+import '../../../shared/helpers/validations.dart';
 
 class PasswordField extends StatefulWidget {
   const PasswordField({super.key, required this.text, required this.passwordChangedEvent});

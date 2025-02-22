@@ -1,5 +1,6 @@
-import 'package:dog_care/helpers/validations.dart';
 import 'package:flutter/material.dart';
+
+import '../../helpers/validations.dart';
 
 class ForgotPasswordButton extends StatefulWidget {
   const ForgotPasswordButton({super.key});
@@ -42,24 +43,20 @@ class _ForgotPasswordButtonState extends State<ForgotPasswordButton> {
             builder: (BuildContext context) {
               return Column(
                 children: [
-                  Container(
-                    // height: 400,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 50),
-                      child: TextFormField(
-                        focusNode: emailFocusNode,
-                        controller: emailController,
-                        validator: emailValidator,
-                        keyboardType: TextInputType.emailAddress,
-                        // obscureText: true,
-                        decoration: InputDecoration(
-                          icon: Icon(Icons.email),
-                          hintText: "Email",
-                          labelText: "Email",
-                        ),
-                        onTapAlwaysCalled: true,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 50),
+                    child: TextFormField(
+                      focusNode: emailFocusNode,
+                      controller: emailController,
+                      validator: emailValidator,
+                      keyboardType: TextInputType.emailAddress,
+                      // obscureText: true,
+                      decoration: InputDecoration(
+                        icon: Icon(Icons.email),
+                        hintText: "Email",
+                        labelText: "Email",
                       ),
+                      onTapAlwaysCalled: true,
                     ),
                   ),
                   // SizedBox(height: 5),

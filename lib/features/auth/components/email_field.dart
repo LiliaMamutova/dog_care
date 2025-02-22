@@ -1,5 +1,6 @@
-import 'package:dog_care/helpers/validations.dart';
 import 'package:flutter/material.dart';
+
+import '../../../shared/helpers/validations.dart';
 
 class EmailField extends StatefulWidget {
   const EmailField({super.key, required this.emailChanged});

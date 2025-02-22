@@ -1,7 +1,7 @@
-import 'package:dog_care/screens/auth/pages/home_page.dart';
-import 'package:dog_care/screens/auth/pages/settings_page.dart';
-import 'package:dog_care/screens/auth/pages/video_page.dart';
-import 'package:dog_care/widgets/nav_bar.dart';
+import 'package:dog_care/features/home/screens/pages/home_page.dart';
+import 'package:dog_care/features/home/screens/pages/settings_page.dart';
+import 'package:dog_care/features/home/screens/pages/video_page.dart';
+import 'package:dog_care/shared/components/nav_bar.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {

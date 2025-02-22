@@ -1,11 +1,11 @@
-import 'package:dog_care/screens/sign_up_widget.dart';
-import 'package:dog_care/services/form_widget.dart';
+import 'package:dog_care/features/auth/components/form_widget.dart';
+import 'package:dog_care/features/auth/components/sign_up_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../config/routes/routes_name.dart';
-import '../features/auth/bloc/auth_bloc.dart';
-import '../features/auth/bloc/auth_state.dart';
+import '../../../config/routes/routes_name.dart';
+import '../bloc/auth_bloc.dart';
+import '../bloc/auth_state.dart';
 
 class AuthScreen extends StatefulWidget {
   // final AuthRepository authRepository;

@@ -12,11 +12,9 @@ class NavBar extends StatefulWidget {
 
   @override
   State<NavBar> createState() => _NavBarState();
-
 }
 
 class _NavBarState extends State<NavBar> {
-
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
@@ -32,10 +30,16 @@ class _NavBarState extends State<NavBar> {
       unselectedItemColor: Colors.red,
       selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
       unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
-      items: <BottomNavigationBarItem> [
-      BottomNavigationBarItem(icon: Icon (Icons.home, size: 30,), label: "Home"),
-      BottomNavigationBarItem(icon: Icon (Icons.video_collection, size: 30), label: "Video"),
-      BottomNavigationBarItem(icon: Icon (Icons.settings, size: 30), label: "Settings"),
-    ],  );
+      items: <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              size: 30,
+            ),
+            label: "Home"),
+        BottomNavigationBarItem(icon: Icon(Icons.video_collection, size: 30), label: "Video"),
+        BottomNavigationBarItem(icon: Icon(Icons.settings, size: 30), label: "Settings"),
+      ],
+    );
   }
 }
