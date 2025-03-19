@@ -35,6 +35,7 @@ class _ForgotPasswordButtonState extends State<ForgotPasswordButton> {
 
   @override
   Widget build(BuildContext context) {
+    // print(Theme.of(context).textButtonTheme.style?.textStyle);
     return TextButton(
       onPressed: () {
         isLogin;
@@ -55,6 +56,7 @@ class _ForgotPasswordButtonState extends State<ForgotPasswordButton> {
                         icon: Icon(Icons.email),
                         hintText: "Email",
                         labelText: "Email",
+                        labelStyle: Theme.of(context).textTheme.labelLarge,
                       ),
                       onTapAlwaysCalled: true,
                     ),
@@ -62,16 +64,8 @@ class _ForgotPasswordButtonState extends State<ForgotPasswordButton> {
                   // SizedBox(height: 5),
                   OutlinedButton(
                     onPressed: () {},
-                    style: OutlinedButton.styleFrom(
-                      side: BorderSide(width: 1, color: Colors.black),
-                      backgroundColor: Colors.black,
-                    ),
                     child: Text(
                       "Send",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
                     ),
                   ),
                 ],
@@ -80,7 +74,6 @@ class _ForgotPasswordButtonState extends State<ForgotPasswordButton> {
       },
       child: Text(
         "Forgot password?",
-        style: TextStyle(color: Colors.red),
       ),
     );
   }

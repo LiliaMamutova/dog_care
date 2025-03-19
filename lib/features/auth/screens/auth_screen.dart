@@ -1,4 +1,4 @@
-import 'package:dog_care/features/auth/components/form_widget.dart';
+import 'package:dog_care/features/auth/components/login_form_widget.dart';
 import 'package:dog_care/features/auth/components/sign_up_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -77,21 +77,24 @@ class _AuthScreenState extends State<AuthScreen> {
                           height: 300,
                           width: 300,
                         ),
-                        isLogin ? FormWidget() : SignUpWidget(),
+                        isLogin ? LoginFormWidget() : SignUpWidget(),
                         SizedBox(height: 10),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(height: 15),
-                            Text(
-                              !isLogin ? "Please create an account" : "Already have an account?",
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 17,
-                              ),
-                            ),
-                            SizedBox(height: 15),
-                          ],
+                        TextButton(
+                          onPressed: () {
+                            setState(() {
+                              isLogin = !isLogin;
+                            });
+                          },
+                          child: Text(
+                            !isLogin
+                                ? "Please create an account"
+                                : "Already have an account?",
+                            style: Theme.of(context).textTheme.bodyLarge,
+                            // style: TextStyle(
+                            //   color: Colors.black,
+                            //   fontSize: 17,
+                            // ),
+                          ),
                         ),
                       ],
                     ),

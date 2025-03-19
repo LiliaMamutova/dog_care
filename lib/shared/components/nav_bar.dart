@@ -20,7 +20,7 @@ class _NavBarState extends State<NavBar> {
     return BottomNavigationBar(
       currentIndex: widget.bottomSelectedIndex,
       onTap: widget.onSelectTab,
-      backgroundColor: Colors.black,
+      backgroundColor: Theme.of(context).navigationBarTheme.backgroundColor,
       elevation: 40,
       iconSize: 10,
       selectedFontSize: 15,
@@ -32,13 +32,11 @@ class _NavBarState extends State<NavBar> {
       unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              size: 30,
-            ),
-            label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.video_collection, size: 30), label: "Video"),
-        BottomNavigationBarItem(icon: Icon(Icons.settings, size: 30), label: "Settings"),
+            icon: Icon(Icons.home, size: 30), label: "Home"),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.video_collection, size: 30), label: "Video"),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.settings, size: 30), label: "Settings"),
       ],
     );
   }

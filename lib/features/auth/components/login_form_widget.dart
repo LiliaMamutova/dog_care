@@ -9,14 +9,14 @@ import '../../../shared/components/buttons/forgot_password_button.dart';
 import '../bloc/auth_bloc.dart';
 import '../bloc/auth_event.dart';
 
-class FormWidget extends StatefulWidget {
-  const FormWidget({super.key});
+class LoginFormWidget extends StatefulWidget {
+  const LoginFormWidget({super.key});
 
   @override
-  State<FormWidget> createState() => _FormWidgetState();
+  State<LoginFormWidget> createState() => _LoginFormWidgetState();
 }
 
-class _FormWidgetState extends State<FormWidget> {
+class _LoginFormWidgetState extends State<LoginFormWidget> {
   final _formKey = GlobalKey<FormState>();
   String password = "";
   String email = "";

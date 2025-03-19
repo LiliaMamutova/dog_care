@@ -41,6 +41,7 @@ class _PasswordFieldState extends State<PasswordField> {
         icon: Icon(Icons.lock),
         hintText: widget.text,
         labelText: widget.text,
+        labelStyle: Theme.of(context).textTheme.labelLarge,
         suffix: IconButton(
           icon: const Icon(Icons.remove_red_eye_outlined),
           onPressed: _changePasswordVisibility,

@@ -25,6 +25,7 @@ class _EmailFieldState extends State<EmailField> {
         icon: Icon(Icons.email_outlined),
         hintText: "Email",
         labelText: "Email",
+        labelStyle: Theme.of(context).textTheme.labelLarge,
       ),
       onChanged: (value) => widget.emailChanged(value),
       validator: emailValidator,
