@@ -77,6 +77,7 @@ class _MainScreenState extends State<MainScreen> {
         bottomSelectedIndex: bottomSelectedIndex,
         onSelectTab: (index) {
           setState(() {
+
             bottomSelectedIndex = index;
           });
           _pageController.animateToPage(

@@ -6,9 +6,9 @@ import 'light_color_scheme.dart';
 
 const appBarTheme = AppBarTheme(
   actionsIconTheme: IconThemeData(color: classicBlack),
-  iconTheme: IconThemeData(color: lightGrey),
+  iconTheme: IconThemeData(color: darkGrey),
   elevation: 0,
-  backgroundColor: white,
-  foregroundColor: lightGrey,
+  backgroundColor: lightGrey,
+  foregroundColor: darkGrey,
   titleTextStyle: headlineMedium,
 );

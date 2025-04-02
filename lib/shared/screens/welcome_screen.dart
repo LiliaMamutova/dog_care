@@ -61,8 +61,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
             fit: BoxFit.cover,
             height: 300,
             width: 300,
-
-            //filterQuality: FilterQuality.low,
           ),
         ),
       ),

@@ -47,7 +47,6 @@ class _PasswordFieldState extends State<PasswordField> {
           onPressed: _changePasswordVisibility,
         ),
       ),
-      // onFieldSubmitted: (value) {}
     );
   }
 }

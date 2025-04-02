@@ -8,7 +8,6 @@ import '../bloc/auth_bloc.dart';
 import '../bloc/auth_state.dart';
 
 class AuthScreen extends StatefulWidget {
-  // final AuthRepository authRepository;
 
   const AuthScreen({super.key});
 
@@ -89,11 +88,6 @@ class _AuthScreenState extends State<AuthScreen> {
                             !isLogin
                                 ? "Please create an account"
                                 : "Already have an account?",
-                            style: Theme.of(context).textTheme.bodyLarge,
-                            // style: TextStyle(
-                            //   color: Colors.black,
-                            //   fontSize: 17,
-                            // ),
                           ),
                         ),
                       ],

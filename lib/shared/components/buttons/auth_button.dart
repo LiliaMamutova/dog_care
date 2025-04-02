@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'button_style.dart';
-
 class AuthButton extends StatelessWidget {
   final VoidCallback onPress;
   final String text;
@@ -15,18 +13,8 @@ class AuthButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ButtonStyle(
-        backgroundColor: loginButtonStyle.backgroundColor,
-      ),
       onPressed: onPress,
-      child: Text(
-        text,
-        style: TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-          fontSize: 18,
-        ),
-      ),
+      child: Text(text),
     );
   }
 }

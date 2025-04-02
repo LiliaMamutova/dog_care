@@ -29,8 +29,6 @@ class _EmailFieldState extends State<EmailField> {
       ),
       onChanged: (value) => widget.emailChanged(value),
       validator: emailValidator,
-
-      // onFieldSubmitted: (value) {},
     );
   }
 }

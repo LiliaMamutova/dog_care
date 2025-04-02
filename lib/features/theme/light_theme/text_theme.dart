@@ -1,17 +1,6 @@
-
 import 'package:flutter/material.dart';
 
 import 'light_color_scheme.dart';
-
-class FontSize {
-  final double smallText = 10.0;
-  final double normalText = 16.0;
-  final double largeText = 20.0;
-  final double appBarText = 22.0;
-  final double navBarText = 10.0;
-  final double selectedFontSizeNavBarText = 15.0;
-}
-
 
 const displayLarge = TextStyle(
   fontSize: 20.0,
@@ -27,7 +16,6 @@ const displayMedium = TextStyle(
   color: white,
 );
 
-
 const displaySmall = TextStyle(
   fontSize: 14.0,
   fontFamily: "Freeman_font.ttf",
@@ -42,7 +30,6 @@ const headlineLarge = TextStyle(
   color: white,
 );
 
-// use for appBar mainScreen
 const headlineMedium = TextStyle(
   fontSize: 22.0,
   fontFamily: "Freeman_font.ttf",
@@ -50,14 +37,12 @@ const headlineMedium = TextStyle(
   color: white,
 );
 
-
 const headlineSmall = TextStyle(
-  fontSize: 18.0,
-  fontFamily: "Freeman_font.ttf",
+  fontSize: 14.0,
+  fontFamily: "Akshar_font.ttf",
   fontWeight: FontWeight.bold,
   color: white,
 );
-
 
 const titleLarge = TextStyle(
   fontSize: 58.0,
@@ -80,24 +65,20 @@ const titleSmall = TextStyle(
   color: white,
 );
 
-// use for login and sign up
 const bodyLarge = TextStyle(
-  fontSize: 24.0,
+  fontSize: 22.0,
   fontFamily: "Freeman_font.ttf",
   fontWeight: FontWeight.bold,
-  color: classicBlack,
+  color: white,
 );
 
-// use for forgot password
 const bodyMedium = TextStyle(
-  fontSize: 18.0,
+  fontSize: 22.0,
   fontFamily: "Freeman_font.ttf",
   fontWeight: FontWeight.normal,
   color: classicRed,
 );
 
-
-// use for outlineButton send
 const bodySmall = TextStyle(
   fontSize: 16.0,
   fontFamily: "Freeman_font.ttf",
@@ -105,7 +86,6 @@ const bodySmall = TextStyle(
   color: white,
 );
 
-// use for auth labelText
 const labelLarge = TextStyle(
   fontSize: 16.0,
   fontFamily: "Freeman_font.ttf",
@@ -119,7 +99,6 @@ const labelMedium = TextStyle(
   fontWeight: FontWeight.normal,
   color: white,
 );
-
 
 const labelSmall = TextStyle(
   fontSize: 12.0,

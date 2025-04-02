@@ -33,7 +33,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
         children: [
           EmailField(
             emailChanged: (value) {
-              print("value from sign up widget email: $value");
             },
           ),
           SizedBox(height: 5),
@@ -41,7 +40,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
             text: "Password",
             passwordChangedEvent: (value) {
               passwordEntered = value;
-              print("value from sign up widget pass one: $value");
             },
           ),
           SizedBox(height: 10),
@@ -49,12 +47,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
             text: "Please repeat password",
             passwordChangedEvent: (value) {
               confirmPassword = value;
-              print("value from sign up widget pass two: $value");
             },
           ),
           SizedBox(height: 25),
-          AuthButton(
-            onPress: () {
+          ElevatedButton(
+            onPressed: () {
               if (confirmPassword != passwordEntered) {
                 FlushBarHelper.flushBarErrorMessage(
                   "Password does not match. Please re-type again",
@@ -78,7 +75,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 );
               }
             },
-            text: "Sign Up",
+            child: Text("Sign Up"),
           ),
         ],
       ),

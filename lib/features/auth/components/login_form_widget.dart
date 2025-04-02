@@ -63,16 +63,15 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               password = value;
             },
           ),
-          SizedBox(height: 10),
-          ForgotPasswordButton(),
-          SizedBox(height: 5),
+          SizedBox(height: 20),
           if (!isLogin) SignUpWidget(),
           SizedBox(height: 15),
           AuthButton(
             onPress: _submitForm,
-            text: "Log in!",
+            text: "Log in",
           ),
           SizedBox(height: 10),
+          ForgotPasswordButton(),
         ],
       ),
     );

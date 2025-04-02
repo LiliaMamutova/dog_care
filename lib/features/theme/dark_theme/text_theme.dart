@@ -1,16 +1,6 @@
 import 'package:dog_care/features/theme/dark_theme/dark_color_scheme.dart';
 import 'package:flutter/material.dart';
 
-class FontSize {
-  final double smallText = 10.0;
-  final double normalText = 16.0;
-  final double largeText = 20.0;
-  final double appBarText = 22.0;
-  final double navBarText = 10.0;
-  final double selectedFontSizeNavBarText = 15.0;
-}
-
-
 
 const displayLarge = TextStyle(
   fontSize: 20.0,
@@ -26,13 +16,11 @@ const displayMedium = TextStyle(
   color: white,
 );
 
-
-
 const displaySmall = TextStyle(
   fontSize: 14.0,
   fontFamily: "Freeman_font.ttf",
   fontWeight: FontWeight.bold,
-  color: lightGrey,
+  color: white,
 );
 
 const headlineLarge = TextStyle(
@@ -52,8 +40,8 @@ const headlineMedium = TextStyle(
 );
 
 const headlineSmall = TextStyle(
-  fontSize: 18.0,
-  fontFamily: "Freeman_font.ttf",
+  fontSize: 14.0,
+  fontFamily: "Akshar_font.ttf",
   fontWeight: FontWeight.bold,
   color: white,
 );
@@ -69,20 +57,20 @@ const titleLarge = TextStyle(
 const titleMedium = TextStyle(
   fontSize: 22.0,
   fontFamily: "Freeman_font.ttf",
-  fontWeight: FontWeight.normal,
+  fontWeight: FontWeight.bold,
   color: white,
 );
 
 const titleSmall = TextStyle(
   fontSize: 18.0,
   fontFamily: "Freeman_font.ttf",
-  fontWeight: FontWeight.normal,
+  fontWeight: FontWeight.bold,
   color: white,
 );
 
 // use for login and sign up
 const bodyLarge = TextStyle(
-  fontSize: 24.0,
+  fontSize: 22.0,
   fontFamily: "Freeman_font.ttf",
   fontWeight: FontWeight.bold,
   color: white,
@@ -101,7 +89,7 @@ const bodySmall = TextStyle(
   fontSize: 16.0,
   fontFamily: "Freeman_font.ttf",
   fontWeight: FontWeight.bold,
-  color: classicBlack,
+  color: white,
 );
 
 // use for auth labelText
@@ -115,7 +103,7 @@ const labelLarge = TextStyle(
 const labelMedium = TextStyle(
   fontSize: 14.0,
   fontFamily: "Freeman_font.ttf",
-  fontWeight: FontWeight.normal,
+  fontWeight: FontWeight.bold,
   color: white,
 );
 
@@ -130,7 +118,7 @@ const labelSmall = TextStyle(
 const captionLarge = TextStyle(
   fontSize: 16.0,
   fontFamily: "Freeman_font.ttf",
-  fontWeight: FontWeight.normal,
+  fontWeight: FontWeight.bold,
   color: white,
 );
 

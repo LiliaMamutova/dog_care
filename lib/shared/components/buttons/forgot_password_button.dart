@@ -1,6 +1,6 @@
+import 'package:dog_care/shared/components/recovery_password_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../../helpers/validations.dart';
 
 class ForgotPasswordButton extends StatefulWidget {
   const ForgotPasswordButton({super.key});
@@ -33,47 +33,23 @@ class _ForgotPasswordButtonState extends State<ForgotPasswordButton> {
     }
   }
 
+  Widget showModal(BuildContext context) {
+    return RecoveryPasswordWidget();
+  }
+
   @override
   Widget build(BuildContext context) {
-    // print(Theme.of(context).textButtonTheme.style?.textStyle);
     return TextButton(
       onPressed: () {
         isLogin;
         showModalBottomSheet<void>(
-            context: context,
-            builder: (BuildContext context) {
-              return Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 50),
-                    child: TextFormField(
-                      focusNode: emailFocusNode,
-                      controller: emailController,
-                      validator: emailValidator,
-                      keyboardType: TextInputType.emailAddress,
-                      // obscureText: true,
-                      decoration: InputDecoration(
-                        icon: Icon(Icons.email),
-                        hintText: "Email",
-                        labelText: "Email",
-                        labelStyle: Theme.of(context).textTheme.labelLarge,
-                      ),
-                      onTapAlwaysCalled: true,
-                    ),
-                  ),
-                  // SizedBox(height: 5),
-                  OutlinedButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Send",
-                    ),
-                  ),
-                ],
-              );
-            });
+          context: context,
+          builder: showModal,
+        );
       },
       child: Text(
         "Forgot password?",
+        style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
       ),
     );
   }
