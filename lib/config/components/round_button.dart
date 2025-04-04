@@ -10,12 +10,9 @@ class RoundButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       key: key,
-      // onTap: onPress,
       onTap: onPress,
-      child: Container(
-        child: Center(
-          child: Text(title),
-        ),
+      child: Center(
+        child: Text(title),
       ),
     );
   }

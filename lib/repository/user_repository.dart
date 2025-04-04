@@ -1,5 +1,6 @@
-import 'package:dog_care/models/user_model.dart';
 import 'package:uuid/uuid.dart';
+
+import '../shared/models/user_model.dart';
 
 class UserRepository {
   UserModel? _user;

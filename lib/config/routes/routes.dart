@@ -1,7 +1,7 @@
 import 'package:dog_care/config/routes/routes_name.dart';
-import 'package:dog_care/screens/auth_screen.dart';
-import 'package:dog_care/screens/main_screen.dart';
-import 'package:dog_care/screens/welcome_screen.dart';
+import 'package:dog_care/features/auth/screens/auth_screen.dart';
+import 'package:dog_care/features/home/screens/main_screen.dart';
+import 'package:dog_care/shared/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
@@ -11,7 +11,7 @@ class Routes {
         return MaterialPageRoute(builder: (context) => const WelcomeScreen());
       case RoutesName.authScreen:
         return MaterialPageRoute(builder: (context) => const AuthScreen());
-      case RoutesName.secondScreen:
+      case RoutesName.mainScreen:
         return MaterialPageRoute(builder: (context) => const MainScreen());
       default:
         return MaterialPageRoute(builder: (context) {
