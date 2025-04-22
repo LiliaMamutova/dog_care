@@ -1,5 +1,3 @@
-import 'package:uuid/uuid.dart';
-
 import '../shared/models/user_model.dart';
 
 class UserRepository {
@@ -9,7 +7,7 @@ class UserRepository {
     if (_user != null) return _user;
     return Future.delayed(
       Duration(milliseconds: 300),
-      () => _user = UserModel(Uuid().v4()),
+      () => _user = UserModel.empty,
     );
   }
 }

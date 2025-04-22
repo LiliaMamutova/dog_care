@@ -8,16 +8,25 @@ class LoginRepository {
 
   Future<UserModel?> loginApi(dynamic data) async {
     final response = await _api.postApi(AppUrl.loginApi, data);
-    return UserModel(response);
+
+    if (response == null) {
+      return null;
+    }
+
+    if (response['status'] == false) {
+      return null;
+    }
+
+    return UserModel.fromJson(response);
   }
 
   Future<UserModel?> getLoginApi(dynamic data) async {
     final response = await _api.getApi(AppUrl.loginApi);
-    return UserModel(response);
+    return UserModel.fromJson(response);
   }
 
   Future<UserModel?> deleteLoginApi(dynamic data) async {
     final response = await _api.deleteApi(AppUrl.loginApi);
-    return UserModel(response);
+    return UserModel.fromJson(response);
   }
 }
